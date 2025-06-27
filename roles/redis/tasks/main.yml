@@ -1,9 +1,4 @@
 ---
-  - name: Configure Redis server
-    hosts: redis
-    become: yes
-
-    tasks:
     - name: Disable default Redis module
       ansible.builtin.command: dnf module disable redis -y
 
