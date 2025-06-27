@@ -32,5 +32,6 @@
       when: load_products_data.stdout | int < 0  
 
     - name: systemd setup
-      include_role: common
-      tasks_from: systemd
+      include_role: 
+        name: common
+        tasks_from: systemd
