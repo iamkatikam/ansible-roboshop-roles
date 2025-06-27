@@ -1,10 +1,13 @@
+---
     - name: app setup
-      include_role: common
-      tasks_from: app-setup
+      include_role: 
+        name: common
+        tasks_from: app-setup
 
     - name: nodejs setup
-      include_role: common
-      tasks_from: nodejs
+      include_role: 
+        name: common
+        tasks_from: nodejs
 
     - name: copy mongodb repo
       ansible.builtin.copy:
