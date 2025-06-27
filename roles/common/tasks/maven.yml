@@ -4,7 +4,7 @@
         name: maven
         state: present
 
-    - name: Install pymyskl Python package and cryptography
+    - name: Install pymySQL Python package and cryptography
       ansible.builtin.pip:
         name: "{{ item }}"
         executable: /usr/bin/pip3.9
