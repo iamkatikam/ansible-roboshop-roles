@@ -9,6 +9,11 @@
         name: common
         tasks_from: maven
 
+    - name: Install mysql
+      ansible.builtin.dnf:
+        name: mysql
+        state: present
+
     - name: Import shipping schema
       community.mysql.mysql_db:
         name: all
