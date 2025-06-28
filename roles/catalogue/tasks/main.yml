@@ -27,10 +27,10 @@
       ansible.builtin.debug:
         msg: "{{ load_products_data }}"
     
-    - name: Load products 
-      ansible.builtin.shell: mongosh --host mongodb.rameshaws.site < /app/db/master-data.js
-      when: load_products_data.stdout | int < 0  
-      ignore_unreachable: true
+    # - name: Load products 
+    #   ansible.builtin.shell: mongosh --host mongodb.rameshaws.site < /app/db/master-data.js
+    #   when: load_products_data.stdout | int < 0  
+    #   ignore_unreachable: true
 
     - name: systemd setup
       include_role: 
