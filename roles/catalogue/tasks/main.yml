@@ -30,8 +30,16 @@
     - name: Load products 
       ansible.builtin.shell: mongosh --host mongodb.rameshaws.site < /app/db/master-data.js
       when: load_products_data.stdout | int < 0  
+      ignore_errors: true
 
     - name: systemd setup
       include_role: 
         name: common
         tasks_from: systemd
+
+    - name: app setup using tags
+      tags:
+      - deployment
+      include_role: 
+        name: common
+        tasks_from: deployment
